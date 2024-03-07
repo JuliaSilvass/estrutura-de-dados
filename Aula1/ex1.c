@@ -30,13 +30,13 @@ int main(){
     fscanf(aqr, "%d", &quat_num);
 
     //Aloca dinamicamente o vetor
-    vetor = (int *)malloc((quat_num) * sizeof(int));
+    vetor = (int *)malloc(quat_num * sizeof(int));
     if (vetor == NULL){
         printf ("erro ao alocar memória!");
         return 1;
     }
     
-    //Ler o arquivos e armazenas no vetor
+    //Ler o arquivo e armazena no vetor
     while (fscanf(aqr, "%d", &vetor[i]) != EOF){
         i++;
     }
@@ -53,7 +53,7 @@ int main(){
     printf("}\n");
 
 
-    // free (vetor);
+    free (vetor);
     fclose(aqr);
     return 0;
 }
